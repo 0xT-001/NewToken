@@ -1,6 +1,6 @@
 pragma solidity 0.5.16;
 
-interface MOMO {
+interface MOMOToken {
   /**
    * @dev Returns the amount of tokens in existence.
    */
@@ -336,7 +336,7 @@ contract Ownable is Context {
   }
 }
 
-contract BEP20Token is Context, MOMO, Ownable {
+contract MOMO is Context, MOMOToken, Ownable {
   using SafeMath for uint256;
 
   mapping (address => uint256) private _balances;
@@ -349,7 +349,7 @@ contract BEP20Token is Context, MOMO, Ownable {
   string private _name;
 
   constructor() public {
-    _name = "Momo Token";
+    _name = "MOMO Token";
     _symbol = "MOT";
     _decimals = 18;
     _totalSupply = 1000000000 * 1000000000000000000; // 1 billion, the supply is fractional in terms of 1000000000000000000
